@@ -1,4 +1,4 @@
-int mode,;
+int mode;
 //declaring constants
 final int intro = 0;
 final int game = 1;
@@ -13,7 +13,10 @@ color blue    =#2200CC;
 color violet  =#A30EF7;
 
 //array list
-ArrayList<String> words = new ArrayList<String>();
+//ArrayList<String> words = new ArrayList<String>();
+color[] colors={red,orange,yellow,green,blue,violet};//actual colors
+String[]words={"  red" ,"orange","yellow"," green"," blue","violet"};//instead of words add this " new String[6];
+
 
 
 //adding words
@@ -24,8 +27,8 @@ ArrayList<String> words = new ArrayList<String>();
 //words.add("blue");
 //words.add("violet");
 
-int choice = int(random(0,3));
-printlnwords.get(choice);
+int choice = int(random(0,6));
+int x = int(random(0,6));
 
 void setup() {
 
@@ -47,11 +50,11 @@ void draw() {
   }
 }
 
-void mouseReleased() {
+void mousePressed() {
   if (mode == intro) {
     mode = game;
   } else if (mode==game) {
-    mode = gameOver;
+   // mode = gameOver;
   } else if (mode==gameOver) {
     mode = intro;
   } else {
