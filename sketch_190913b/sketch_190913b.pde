@@ -1,4 +1,4 @@
-int mode;
+int mode,a,coin;
 //declaring constants
 final int intro = 0;
 final int game = 1;
@@ -48,13 +48,65 @@ void draw() {
   } else {
     println("mode error"+mode);
   }
+  
+  println("p"+p);
+  println("a"+a);
 }
 
 void mousePressed() {
   if (mode == intro) {
     mode = game;
   } else if (mode==game) {
+    
+     //game tab-=-=-=-=-=-=-=-=-=
    // mode = gameOver;
+    if (choice==x) {
+    truth=true;
+  } else {
+    truth=false;
+  }
+  if (mode == game&& mouseX >400 ) {
+    guess=true;
+  }
+    if (mode == game&& mouseX <400 ){
+    guess=false;
+  }
+  if (truth==guess) {
+    coin = int(random(0,2));
+    
+    
+    t=200-p;
+    p++;
+  } else {
+    mode=gameOver;
+  }
+  if (coin==0){
+ choice = int(random(0,6));
+x=choice;
+    
+
+  }
+  if (coin==1){
+ choice = int(random(0,6));
+ x = int(random(0,6));
+    
+    
+  }
+  while (coin==1&&choice==x){
+ choice = int(random(0,6));
+ x = int(random(0,6));
+    
+    
+  }
+  
+  
+  
+  
+  
+  
+ //game tab-=-=-=-=-=-=-=-=-=
+   
+   
   } else if (mode==gameOver) {
     mode = intro;
   } else {

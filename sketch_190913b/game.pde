@@ -1,7 +1,8 @@
 boolean here=true;
 boolean truth, guess;
-int t=1000;
+int t=400;
 int p=0;
+int c=260;
 void game() {
   t=t-2;
    if (t<=0) {
@@ -11,6 +12,7 @@ void game() {
   if (here==false) {
     mode = gameOver;
   }
+  
   fill(0);
   rect(0, 0, 400, 1000);
   fill(255);
@@ -24,28 +26,34 @@ void game() {
   rect(800,700,t*-4,100);
   textSize(50);
   text("points"+p,50,50);
+  x(150,300,5);
+  check(580,350,5);
+
+  fill(0,c);
+  rect(0,0,800,800);
+  if(c>0){c=c-2;}
 }
 
 
-void mouseClicked() {
-  if (choice==x) {
-    truth=true;
-  } else {
-    truth=false;
-  }
-  if (mode == game&& mouseX >400 ) {
-    guess=true;
-  }
-    if (mode == game&& mouseX <400 ){
-    guess=false;
-  }
-  if (truth==guess) {
-    choice = int(random(0, 6));
-     x = int(random(0, 6));
-    t=200;
-    p++;
-  } else {
-    mode=gameOver;
-  }
+//void mouseClicked() {
+//  if (choice==x) {
+//    truth=true;
+//  } else {
+//    truth=false;
+//  }
+//  if (mode == game&& mouseX >400 ) {
+//    guess=true;
+//  }
+//    if (mode == game&& mouseX <400 ){
+//    guess=false;
+//  }
+//  if (truth==guess) {
+//    choice = int(random(0, 6));
+//     x = int(random(0, 6));
+//    t=200;
+//    p++;
+//  } else {
+//    mode=gameOver;
+//  }
  
-}
+//}
