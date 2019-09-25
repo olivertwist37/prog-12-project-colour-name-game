@@ -1,4 +1,4 @@
-int mode,a,coin;
+int mode,a,coin,k;
 //declaring constants
 final int intro = 0;
 final int game = 1;
@@ -73,9 +73,10 @@ void mousePressed() {
   }
   if (truth==guess) {
     coin = int(random(0,2));
+    k=0+p*2;
     
-    
-    t=200-p;
+    t=200-p*2;
+ 
     p++;
   } else {
     mode=gameOver;

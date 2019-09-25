@@ -3,7 +3,19 @@ boolean truth, guess;
 int t=400;
 int p=0;
 int c=260;
+
 void game() {
+  if(mouseX>400){
+    b=5;
+  }else{
+   b=1; 
+  }
+  if(mouseX<400){
+    z=5;
+  }else{
+   z=1; 
+  }
+  
   t=t-2;
    if (t<=0) {
     mode=gameOver;
@@ -26,12 +38,19 @@ void game() {
   rect(800,700,t*-4,100);
   textSize(50);
   text("points"+p,50,50);
-  x(150,300,5);
-  check(580,350,5);
-
+  x(150,300,z);
+  check(580,350,b);
+ 
+ 
+   strokeWeight(0);
+  fill(127.5);
+ rect(k,700,5,100);
+  rect(k,700,800,5);
+  
   fill(0,c);
   rect(0,0,800,800);
   if(c>0){c=c-2;}
+ 
 }
 
 
